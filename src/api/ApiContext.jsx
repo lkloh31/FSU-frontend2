@@ -3,6 +3,7 @@ import { createContext, useContext, useState } from "react";
 import { useAuth } from "../auth/AuthContext";
 
 // export const API = "https://placeholder";
+export const API = "https://fitnesstrac-kr.herokuapp.com/api";
 
 const ApiContext = createContext();
 

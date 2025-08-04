@@ -20,21 +20,21 @@ export default function Login() {
   };
 
   return (
-    <>
-      <h1>Log in to your account</h1>
-      <form action={tryLogin}>
+    <div className="auth-page">
+      <h1 className="auth-heading">Login to your account</h1>
+      <form className="auth-form" action={tryLogin}>
         <label>
-          Username
-          <input type="text" name="username" required />
+          <input type="text" name="username" placeholder="Username" required />
         </label>
         <label>
-          Password
-          <input type="password" name="password" required />
+          <input type="password" name="password" placeholder="Password" required />
         </label>
         <button>Login</button>
         {error && <output>{error}</output>}
       </form>
-      <a onClick={() => setPage("register")}>Need an account? Register here.</a>
-    </>
+      <a className="auth-link" onClick={() => setPage("register")}>
+        Need an account? Register here.
+      </a>
+    </div>
   );
 }
