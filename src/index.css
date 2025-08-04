@@ -66,3 +66,199 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
+/* Full Page */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #F5F5E7;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+/* Clouds */
+.cloud {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;       
+  height: auto;
+  opacity: 0.4;
+  pointer-events: none;
+  object-fit: cover;
+}
+
+.cloud.left {
+  left: 0;
+}
+
+.cloud.right {
+  right: 0;
+}
+
+
+/* Nav Bar */
+.navbar {
+  background-color: #554747;
+  color: #FCFCF2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Segoe UI', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+}
+
+body {
+  margin: 0;
+  padding-top: 60px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 6;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.75rem;
+}
+
+.nav-links a {
+  position: relative;
+  display: inline-block;
+  color: #FCFCF2;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px; 
+  left: 0;
+  height: 2px;
+  width: 100%;
+  max-width: 100%;
+  background-color: #dcd0bd;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #dcd0bd;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Home Page */
+.home-title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  color: #4f4343;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.home-subtitle {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  color: #4f4343;
+  margin-bottom: 2rem;
+  margin-top: -0.3rem;
+}
+
+.home-description {
+
+  margin: auto;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 2;
+  color: #4f4343;
+}
+
+
+
+/* Departments Page */
+
+/* Login/Register Page */
+.auth-page {
+  text-align: center;
+  color: #554747;
+}
+
+.auth-heading {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+/* Form styling */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.auth-form input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #554747;
+  border-radius: 3px;
+  background-color: #FCFCF2;
+  color: #554747;      
+}
+
+.auth-form button {
+  background-color: #554747;
+  color: #FCFCF2;
+  padding: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.auth-form button:hover {
+  background-color: #3e3534;
+}
+
+output {
+  color: #A15145;
+  margin-top: 0.5rem;
+}
+
+.auth-link {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #596175;
+  text-decoration: underline;
+}
+
+form input[type="text"],
+form input[type="password"] {
+  width: 480px;
+  max-width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #554747;
+}
+
+h1 {
+  margin-top: -5rem; 
+}

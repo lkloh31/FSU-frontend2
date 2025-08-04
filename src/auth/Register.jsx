@@ -21,23 +21,25 @@ export default function Register() {
   };
 
   return (
-    <>
-      <h1>Register for an account</h1>
-      <form action={tryRegister}>
+    <div className="auth-page">
+      <h1 className="auth-heading">Register</h1>
+      <form className="auth-form" action={tryRegister}>
         <label>
-          Username
-          <input type="text" name="username" required />
+          <input type="text" name="name" placeholder="Name" required />
         </label>
         <label>
-          Password
-          <input type="password" name="password" required />
+          <input type="text" name="username" placeholder="Username" required />
+        </label>
+        <label>
+          <input type="password" name="password" placeholder="Password" required />
         </label>
         <button>Register</button>
         {error && <output>{error}</output>}
       </form>
-      <a onClick={() => setPage("login")}>
+      <a className="auth-link" onClick={() => setPage("login")}>
         Already have an account? Log in here.
       </a>
-    </>
+    </div>
   );
 }
+
