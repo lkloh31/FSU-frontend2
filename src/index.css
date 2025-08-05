@@ -277,16 +277,46 @@ h1 {
   box-shadow: 0 2px 8px rgba(17, 16, 16, 0.1);
 }
 
-.departments-header {
+.department-header {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin-bottom: 2rem;
+  gap: 0rem;
+  justify-content: start;
+  margin-bottom: 1rem;
+}
+
+.department-title {
+  font-size: 2rem;
+  margin: 0;
+  text-align: left;
+}
+
+.department-description {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.department-icon {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+  margin-right: -24px;
 }
 
 .element-icons {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
   margin-top: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .element-icons img {
