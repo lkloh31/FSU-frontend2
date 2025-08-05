@@ -78,24 +78,41 @@ html, body {
 
 
 /* Clouds */
+.clouds {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  justify-content: space-between;
+  margin-top: -10px; 
+  margin-bottom: -60px;
+}
+
 .cloud {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 50%;       
-  height: auto;
-  opacity: 0.4;
-  pointer-events: none;
-  object-fit: cover;
+  width: 30%;
+  max-width: 300px;
+  opacity: 70%;
+  mix-blend-mode: multiply;
+  filter: blur(0.7px);
+}
+
+.home-title,
+.home-subtitle,
+.home-description {
+  position: relative;
+  z-index: 1;
+  margin-top: -40px; 
+  padding: 0 2rem;
+  text-align: center;
 }
 
 .cloud.left {
-  left: 0;
+  transform: translateX(-25%); 
+}
+.cloud.right {
+  transform: translateX(25%);
+  width: 90%;
 }
 
-.cloud.right {
-  right: 0;
-}
 
 
 /* Nav Bar */
@@ -112,6 +129,7 @@ html, body {
   left: 0;
   right: 0;
   height: 60px;
+  z-index: 10;
 }
 
 body {
@@ -170,6 +188,8 @@ body {
   color: #4f4343;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
+  white-space: nowrap; 
+  overflow-wrap: break-word;
 }
 
 .home-subtitle {
@@ -190,9 +210,92 @@ body {
   color: #4f4343;
 }
 
+.homepage-content {
+  margin-top: -40px; 
+  position: relative;
+  z-index: 1;
+}
+
 
 
 /* Departments Page */
+body {
+  margin: 0;
+  background-color: #F5F5E7;
+  font-family: 'Segoe UI', sans-serif;
+  color: #554747
+}
+
+h1 {
+  text-align: center;
+  color: #554747;
+  font-size: 3rem;
+  padding-top: 6rem;
+  margin-bottom: 2rem;
+}
+
+.earth-kingdom {
+  background-color: #C1DBB1;
+  color: #365710;
+}
+
+.fire-nation {
+  background-color: #A15145;
+  color: #FBE8E1; 
+}
+
+.water-tribe {
+  background-color: #596175;
+  color: #FCFCF2; 
+}
+
+.air-nomads {
+  background-color: #FCCA59;
+  color: #9F4C00; 
+}
+
+.department-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.departments-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(500px, 1fr));
+  gap: 3rem;
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.department-card {
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(17, 16, 16, 0.1);
+}
+
+.departments-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.element-icons {
+  display: flex;
+  margin-top: 0.5rem;
+}
+
+.element-icons img {
+  width: 21vh;
+  height: auto px;
+}
+
+
+
 
 /* Login/Register Page */
 .auth-page {
