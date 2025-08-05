@@ -4,7 +4,6 @@ import { useAuth } from "../auth/AuthContext";
 
 export const API = "http://localhost:3000";
 
-
 const ApiContext = createContext();
 
 export function ApiProvider({ children }) {

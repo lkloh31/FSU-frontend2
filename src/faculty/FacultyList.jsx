@@ -13,7 +13,7 @@ export default function FacultyList() {
   if (error) return <p>Sorry! {error}</p>;
 
   return (
-    <ul>
+    <ul className="faculty-list">
       {faculties.map((faculty) => (
         <FacultyListItem key={faculty.id} faculty={faculty} />
       ))}
@@ -29,9 +29,30 @@ function FacultyListItem({ faculty }) {
     error,
   } = useMutation("DELETE", "/faculties/" + faculty.id, ["faculties"]);
 
+  const getInitials = (name) => {
+    return name
+      .split(" ")
+      .map((word) => word[0])
+      .join("")
+      .toUpperCase()
+      .substring(0, 2);
+  };
+
+  const handleDelete = () => {
+    if (window.confirm(`Are you sure you want to delete ${faculty.name}?`)) {
+      deleteFaculty();
+    }
+  };
+
   return (
-    <li>
-      <p>{faculty.name}</p>
+    <li className="faculty-card">
+      <div className="faculty-avatar">{getInitials(faculty.name)}</div>
+      <div className="faculty-info">
+        <h3 className="faculty-name">{faculty.name}</h3>
+        <p className="faculty-department">{faculty.department}</p>
+        <p className="faculty-title">{faculty.bio}</p>
+        <p className="faculty-contact">{faculty.contact}</p>
+      </div>
       {token && (
         <button onClick={() => deleteFaculty()}>
           {loading ? "Deleting" : error ? error : "Delete"}
