@@ -10,10 +10,11 @@ export default function Register() {
   const [error, setError] = useState(null);
 
   const tryRegister = async (formData) => {
+    const name = formData.get("name");
     const username = formData.get("username");
     const password = formData.get("password");
     try {
-      await register({ username, password });
+      await register({ name, username, password });
       setPage("home");
     } catch (e) {
       setError(e.message);
@@ -31,7 +32,12 @@ export default function Register() {
           <input type="text" name="username" placeholder="Username" required />
         </label>
         <label>
-          <input type="password" name="password" placeholder="Password" required />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
         </label>
         <button>Register</button>
         {error && <output>{error}</output>}
@@ -42,4 +48,3 @@ export default function Register() {
     </div>
   );
 }
-
