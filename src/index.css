@@ -28,11 +28,10 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #F5F5E7;
-  font-family: 'Segoe UI', sans-serif;
-  color: #554747
+  background-color: #f5f5e7;
+  font-family: "Segoe UI", sans-serif;
+  color: #554747;
 }
-
 
 h1 {
   text-align: center;
@@ -40,7 +39,7 @@ h1 {
   font-size: 3rem;
   padding-top: 6rem;
   margin-bottom: 2rem;
-  margin-top: -5rem; 
+  margin-top: -5rem;
   font-size: 3.2em;
   line-height: 1.1;
 }
@@ -234,7 +233,6 @@ body {
   }
 }
 
-
 /* Home Page */
 .home-title {
   font-size: 3rem;
@@ -385,22 +383,22 @@ h1 {
 
 .fire-nation-btn {
   background-color: #fff1ed;
-  color: #A15145;
+  color: #a15145;
 }
 
 .water-tribe-btn {
-  background-color: #E0E5F2;
-  color: #2A324B;
+  background-color: #e0e5f2;
+  color: #2a324b;
 }
 
 .earth-kingdom-btn {
-  background-color: #8CAC6D;
+  background-color: #8cac6d;
   color: white;
 }
 
 .air-nomads-btn {
-  background-color: #FFE4AC;
-  color: #9F4C00;
+  background-color: #ffe4ac;
+  color: #9f4c00;
 }
 
 /* Login/Register Page */
@@ -493,6 +491,11 @@ h1 {
   overflow: hidden;
 }
 
+.fire {
+  background-color: #a15145;
+  color: #fbe8e1;
+}
+
 .faculty-avatar {
   width: 80px;
   height: 80px;
@@ -516,27 +519,37 @@ h1 {
 .faculty-name {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #2c3e50;
+  /* color: #2c3e50; */
   margin: 0 0 0.25rem 0;
 }
 
 .faculty-title {
   font-size: 1rem;
-  color: #7f8c8d;
+  /* color: #7f8c8d; */
   margin: 0 0 0.25rem 0;
   font-style: italic;
 }
 
 .faculty-department {
   font-size: 0.9rem;
-  color: #34495e;
+  /* color: #34495e; */
   margin: 0 0 0.5rem 0;
 }
 
 .faculty-contact {
   font-size: 0.9rem;
-  color: #5d6d7e;
+  /* color: #5d6d7e; */
   margin: 0;
+}
+
+.delete-faculty-btn {
+  background: linear-gradient(135deg, #a15145 0%, #9f4c00 100%);
+  color: white;
+}
+
+.delete-faculty-btn:hover {
+  background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+  transform: translateY(-1px);
 }
 
 /* Faculty form styling */
@@ -573,4 +586,3 @@ h1 {
   background-color: #fcfcf2;
   color: #554747;
 }
-

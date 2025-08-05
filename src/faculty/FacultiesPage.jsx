@@ -10,7 +10,9 @@ export default function FacultiesPage() {
     <>
       <h1>Faculties</h1>
       <FacultyList />
-      {token && <FacultyForm />}
+      {/* {token && <FacultyForm />} */}
+
+      <FacultyForm />
     </>
   );
 }

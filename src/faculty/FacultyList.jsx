@@ -45,16 +45,29 @@ function FacultyListItem({ faculty }) {
   };
 
   return (
-    <li className="faculty-card">
+    <li
+      className={`faculty-card ${
+        faculty.department_id === 1
+          ? "fire-nation"
+          : faculty.department_id === 2
+          ? "water-tribe"
+          : faculty.department_id === 3
+          ? "air-nomads"
+          : faculty.department_id === 4
+          ? "earth-kingdom"
+          : ""
+      }`}
+    >
       <div className="faculty-avatar">{getInitials(faculty.name)}</div>
       <div className="faculty-info">
         <h3 className="faculty-name">{faculty.name}</h3>
-        <p className="faculty-department">{faculty.department}</p>
-        <p className="faculty-title">{faculty.bio}</p>
-        <p className="faculty-contact">{faculty.contact}</p>
+        <p className="faculty-department">{faculty.sub_department}</p>
+        <p className="faculty-title">{faculty.title}</p>
+        <p className="faculty-bio">{faculty.bio}</p>
+        <p className="faculty-contact">{faculty.email}</p>
       </div>
       {token && (
-        <button onClick={() => deleteFaculty()}>
+        <button className="delete-faculty-btn" onClick={handleDelete}>
           {loading ? "Deleting" : error ? error : "Delete"}
         </button>
       )}
