@@ -15,6 +15,10 @@ export default function HomePage() {
 
   return (
     <>
+     <div className="clouds">
+        <img src="/images/leftcloud.png" alt="left cloud" className="cloud left" />
+        <img src="/images/rightcloud.png" alt="right cloud" className="cloud right" />
+      </div>
       <h1 className="home-title">Welcome to Elemental Academy, </h1>
       {/* {token && <strong>{admin?.username}...</strong>} */}
       <h2 className="home-subtitle">Where knowledge meets elements</h2>
