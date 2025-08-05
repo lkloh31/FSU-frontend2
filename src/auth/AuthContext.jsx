@@ -8,7 +8,7 @@ export function AuthProvider({ children }) {
   const [token, setToken] = useState();
 
   const register = async (credentials) => {
-    const response = await fetch(API + "/users/register", {
+    const response = await fetch(API + "/admin/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -21,7 +21,7 @@ export function AuthProvider({ children }) {
   };
 
   const login = async (credentials) => {
-    const response = await fetch(API + "/users/login", {
+    const response = await fetch(API + "/admin/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
