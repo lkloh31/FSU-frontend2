@@ -4,7 +4,8 @@ const PageContext = createContext();
 
 export function PageProvider({ children }) {
   const [page, setPage] = useState("home");
-  const value = { page, setPage };
+  const [pageData, setPageData] = useState(null);
+  const value = { page, setPage, pageData, setPageData };
   return <PageContext.Provider value={value}>{children}</PageContext.Provider>;
 }
 

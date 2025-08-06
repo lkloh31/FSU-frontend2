@@ -10,6 +10,7 @@ import FacultiesPage from "./faculty/FacultiesPage";
 import HomePage from "./home/HomePage";
 import Error404 from "./Error404.jsx";
 import DepartmentDetails from "./department/DepartmentDetails";
+import FacultyDetails from "./faculty/FacultyDetails";
 
 export default function App() {
   const { page } = usePage();
@@ -22,6 +23,7 @@ export default function App() {
   if (page === "login") return <Login />;
   if (page === "departments") return <DepartmentsPage />;
   if (page === "faculties") return <FacultiesPage />;
+  if (page === "facultydetails") return <FacultyDetails />;
   if (page === "home") return <HomePage />;
 
   if (page === "firenation") return <DepartmentDetails id={1} />;

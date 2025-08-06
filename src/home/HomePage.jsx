@@ -15,32 +15,38 @@ export default function HomePage() {
 
   return (
     <>
-     <div className="clouds">
-        <img src="/images/leftcloud.png" alt="left cloud" className="cloud left" />
-        <img src="/images/rightcloud.png" alt="right cloud" className="cloud right" />
+      <div className="clouds">
+        <img
+          src="/images/leftcloud.png"
+          alt="left cloud"
+          className="cloud left"
+        />
+        <img
+          src="/images/rightcloud.png"
+          alt="right cloud"
+          className="cloud right"
+        />
       </div>
-      <h1 className="home-title">Welcome to Elemental Academy, </h1>
+      <h1 className="home-title">Welcome to Elemental Academy...</h1>
       {/* {token && <strong>{admin?.username}...</strong>} */}
-      <h2 className="home-subtitle">Where knowledge meets elements</h2>
-    <div className="home-description">
-      <p>
-        In a world where knowledge flows like water, stands strong like earth,
-        dances like air, and blazes with passion like fire, Elemental Academy
-        stands as a beacon of balance, wisdom, and mastery.
-
-        Here, students from every nation—Northern Water Tribe scholars, Earth
-        Kingdom strategists, Fire Nation innovators, and Air Nomad
-        free-thinkers—gather to learn under the guidance of our esteemed faculty
-        of elemental Masters. Whether you seek the healing arts of water, the
-        resilience of rock, the precision of flame, or the freedom of wind, your
-        path begins here.
-        
-        United in diversity. Rooted in tradition. Guided by the Avatar's legacy.
-      </p>
-      <p>Which element will call to you? </p>
-      <p>Which path will shape your destiny?</p>
-      {/* <p>Step forward, {admin?.username}. The world awaits your bending.</p> */}
-    </div>
+      <h2 className="home-subtitle">where knowledge meets elements</h2>
+      <div className="home-description">
+        <p>
+          In a world where knowledge flows like water, stands strong like earth,
+          dances like air, and blazes with passion like fire, Elemental Academy
+          stands as a beacon of balance, wisdom, and mastery. Here, students
+          from every nation—Northern Water Tribe scholars, Earth Kingdom
+          strategists, Fire Nation innovators, and Air Nomad
+          free-thinkers—gather to learn under the guidance of our esteemed
+          faculty of elemental Masters. Whether you seek the healing arts of
+          water, the resilience of rock, the precision of flame, or the freedom
+          of wind, your path begins here. United in diversity. Rooted in
+          tradition. Guided by the Avatar's legacy.
+        </p>
+        <p>Which element will call to you? </p>
+        <p>Which path will shape your destiny?</p>
+        {/* <p>Step forward, {admin?.username}. The world awaits your bending.</p> */}
+      </div>
     </>
   );
 }
