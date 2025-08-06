@@ -1,4 +1,5 @@
 import "./App.css";
+import { useEffect } from "react";
 
 import { usePage } from "./layout/PageContext";
 
@@ -9,14 +10,20 @@ import FacultiesPage from "./faculty/FacultiesPage";
 import HomePage from "./home/HomePage";
 import Error404 from "./Error404.jsx";
 import DepartmentDetails from "./department/DepartmentDetails";
+import FacultyDetails from "./faculty/FacultyDetails";
 
 export default function App() {
   const { page } = usePage();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [page]);
 
   if (page === "register") return <Register />;
   if (page === "login") return <Login />;
   if (page === "departments") return <DepartmentsPage />;
   if (page === "faculties") return <FacultiesPage />;
+  if (page === "facultydetails") return <FacultyDetails />;
   if (page === "home") return <HomePage />;
 
   if (page === "firenation") return <DepartmentDetails id={1} />;
