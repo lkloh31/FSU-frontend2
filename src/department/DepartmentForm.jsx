@@ -15,18 +15,20 @@ export default function DepartmentForm() {
 
   return (
     <>
-      <h2>Add a new department</h2>
-      <form action={addDepartment}>
-        <label>
-          Name
-          <input type="text" name="name" />
-        </label>
-        <label>
-          Description
-          <input type="text" name="description" />
-        </label>
-        <button>{loading ? "Adding..." : "Add department"}</button>
-        {error && <output>{error}</output>}
+      <h2 className="form-heading">Add a new department</h2>
+      <form action={addDepartment} className="department-form">
+        <div className="department-form-fields">
+          <label>
+            Name
+            <input type="text" name="name" />
+          </label>
+          <label>
+            Description
+            <input type="text" name="description" />
+          </label>
+          <button>{loading ? "Adding..." : "Add department"}</button>
+        </div>
+        {error && <output className="form-error">{error}</output>}
       </form>
     </>
   );
