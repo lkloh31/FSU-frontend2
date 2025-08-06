@@ -2,22 +2,42 @@ import { useAuth } from "../auth/AuthContext";
 import useQuery from "../api/useQuery";
 import useMutation from "../api/useMutation";
 
-export default function FacultyList() {
+export default function FacultyList({ onAddFaculty }) {
+  const { token } = useAuth();
   const {
     data: faculties,
     loading,
     error,
   } = useQuery("/faculties", "faculties");
 
+  const handleAddFaculty = () => {
+    if (onAddFaculty) {
+      onAddFaculty();
+    }
+  };
+
   if (loading || !faculties) return <p>Loading...</p>;
   if (error) return <p>Sorry! {error}</p>;
 
   return (
-    <ul className="faculty-list">
-      {faculties.map((faculty) => (
-        <FacultyListItem key={faculty.id} faculty={faculty} />
-      ))}
-    </ul>
+    <div className="faculty-list-container">
+      <ul className="faculty-list">
+        {faculties.map((faculty) => (
+          <FacultyListItem key={faculty.id} faculty={faculty} />
+        ))}
+      </ul>
+      {token && (
+        <div className="add-faculty-container">
+          <button className="add-faculty-btn" onClick={handleAddFaculty}>
+            <img
+              src="/images/add-icon.png"
+              alt="Add Faculty"
+              className="add-faculty-icon"
+            />
+          </button>
+        </div>
+      )}
+    </div>
   );
 }
 
@@ -44,6 +64,11 @@ function FacultyListItem({ faculty }) {
     }
   };
 
+  // WIP
+  const handleEdit = () => {
+    console.log("Edit faculty:", faculty.name);
+  };
+
   return (
     <li
       className={`faculty-card ${
@@ -58,7 +83,50 @@ function FacultyListItem({ faculty }) {
           : ""
       }`}
     >
-      <div className="faculty-avatar">{getInitials(faculty.name)}</div>
+      {token && (
+        <button
+          className="delete-faculty-btn close-button"
+          onClick={handleDelete}
+          disabled={loading}
+        >
+          <img
+            src="/images/close-button.png"
+            alt="Delete"
+            className="close-button-icon"
+          />
+        </button>
+      )}
+      <div className="faculty-avatar">
+        {faculty.department_id ? (
+          <img
+            src={`/images/${
+              faculty.department_id === 1
+                ? "fire"
+                : faculty.department_id === 2
+                ? "water"
+                : faculty.department_id === 3
+                ? "air"
+                : faculty.department_id === 4
+                ? "earth"
+                : ""
+            }.png`}
+            alt={`${
+              faculty.department_id === 1
+                ? "Fire Nation"
+                : faculty.department_id === 2
+                ? "Water Tribe"
+                : faculty.department_id === 3
+                ? "Air Nomads"
+                : faculty.department_id === 4
+                ? "Earth Kingdom"
+                : "Department"
+            } Avatar`}
+            className="avatar-image"
+          />
+        ) : (
+          getInitials(faculty.name)
+        )}
+      </div>
       <div className="faculty-info">
         <h3 className="faculty-name">{faculty.name}</h3>
         <p className="faculty-department">{faculty.sub_department}</p>
@@ -67,8 +135,12 @@ function FacultyListItem({ faculty }) {
         <p className="faculty-contact">{faculty.email}</p>
       </div>
       {token && (
-        <button className="delete-faculty-btn" onClick={handleDelete}>
-          {loading ? "Deleting" : error ? error : "Delete"}
+        <button className="edit-faculty-btn edit-button" onClick={handleEdit}>
+          <img
+            src="/images/edit-icon.png"
+            alt="Edit"
+            className="edit-button-icon"
+          />
         </button>
       )}
     </li>
