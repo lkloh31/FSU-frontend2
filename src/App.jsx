@@ -1,4 +1,5 @@
 import "./App.css";
+import { useEffect } from "react";
 
 import { usePage } from "./layout/PageContext";
 
@@ -12,6 +13,10 @@ import DepartmentDetails from "./department/DepartmentDetails";
 
 export default function App() {
   const { page } = usePage();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [page]);
 
   if (page === "register") return <Register />;
   if (page === "login") return <Login />;
