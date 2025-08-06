@@ -1,4 +1,5 @@
 import { useAuth } from "../auth/AuthContext";
+import { usePage } from "../layout/PageContext";
 import useQuery from "../api/useQuery";
 import useMutation from "../api/useMutation";
 
@@ -23,6 +24,8 @@ export default function DepartmentList() {
 
 function DepartmentListItem({ department }) {
   const { token } = useAuth();
+  const { setPage } = usePage();
+  
   const {
     mutate: deleteDepartment,
     loading,
@@ -40,6 +43,11 @@ function DepartmentListItem({ department }) {
   const className =
     "department-card " + department.name.toLowerCase().replace(/\s+/g, "-");
 
+const handleViewInfo = () => {
+    const pageKey = department.name.toLowerCase().replace(/\s+/g, "");
+    setPage(pageKey); 
+  };
+
   return (
     <div className={className}>
       <div className="department-header">
@@ -56,22 +64,35 @@ function DepartmentListItem({ department }) {
       <p className="department-description">{department.description}</p>
 
       <div className="button-row">
-        {token && (
-          <div className="left-buttons">
-            <button className="edit-btn">Edit Information</button>
-            <button className="delete-btn" onClick={deleteDepartment}>
-              {loading ? "Deleting..." : error ? error : "Delete Information"}
-            </button>
-          </div>
-        )}
-
         <div className="view-button-wrapper">
-          <button className={`view-btn ${department.name.toLowerCase().replace(" ", "-")}-btn`}>
+          <button
+            onClick={handleViewInfo} 
+            className={`view-btn ${department.name.toLowerCase().replace(" ", "-")}-btn`}
+          >
             View Info
           </button>
         </div>
+
+        {token && (
+          <div className="admin-button-group">
+            <button
+              className="edit-btn"
+              onClick={() =>
+                alert(`Edit form for ${department.name} (not implemented)`)
+              }
+            >
+              Edit Information
+            </button>
+            <button className="delete-btn" onClick={deleteDepartment}>
+              {loading
+                ? "Deleting..."
+                : error
+                ? error
+                : "Delete Information"}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
 }
-

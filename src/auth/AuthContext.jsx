@@ -8,10 +8,10 @@ export function AuthProvider({ children }) {
   const [token, setToken] = useState();
 
   useEffect(() => {
-    const savedToken = localStorage.getItem("authToken");
-    console.log(savedToken);
-    if (savedToken) {
-      setToken(savedToken);
+
+    const storedToken = localStorage.getItem("authToken");
+    if (storedToken) {
+      setToken(storedToken);
     }
   }, []);
 
@@ -40,10 +40,15 @@ export function AuthProvider({ children }) {
     const result = await response.json();
     if (!response.ok) throw result;
     setToken(result.token);
-    localStorage.setItem("authToken", result.token);
+
+    localStorage.setItem("authToken", result);
+
   };
 
-  const logout = () => setToken(null);
+  const logout = () => {
+    setToken(null);
+    localStorage.removeItem("authToken");
+  };
 
   const value = { token, register, login, logout };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
