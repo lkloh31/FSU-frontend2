@@ -7,7 +7,7 @@ export default function FacultyForm({ onClose, onSuccess }) {
     error,
   } = useMutation("POST", "/faculties", ["faculties"]);
 
-  const addFaculty = async (formData) => {
+  const addFaculty = (formData) => {
     const name = formData.get("name");
     const title = formData.get("title");
     const sub_department = formData.get("sub_department");
@@ -15,16 +15,7 @@ export default function FacultyForm({ onClose, onSuccess }) {
     const email = formData.get("email");
     const department_id = parseInt(formData.get("department_id"), 10);
     const profile_img = "https://placeholdit.com/400x400/dddddd/999999";
-    // add({
-    //   name,
-    //   title,
-    //   sub_department,
-    //   profile_img,
-    //   bio,
-    //   email,
-    //   department_id,
-    // });
-    console.log("Sending data:", {
+    add({
       name,
       title,
       sub_department,
@@ -33,22 +24,8 @@ export default function FacultyForm({ onClose, onSuccess }) {
       email,
       department_id,
     });
-
-    try {
-      await add({
-        name,
-        title,
-        sub_department,
-        profile_img,
-        bio,
-        email,
-        department_id,
-      });
-      if (onSuccess) {
-        onSuccess();
-      }
-    } catch (err) {
-      console.error("Add faculty error:", err);
+    if (onSuccess) {
+      onSuccess();
     }
   };
 

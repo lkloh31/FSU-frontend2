@@ -1,6 +1,7 @@
 import { useAuth } from "../auth/AuthContext";
 import useQuery from "../api/useQuery";
 import useMutation from "../api/useMutation";
+import { usePage } from "../layout/PageContext";
 
 export default function FacultyList({ onAddFaculty }) {
   const { token } = useAuth();
@@ -43,6 +44,7 @@ export default function FacultyList({ onAddFaculty }) {
 
 function FacultyListItem({ faculty }) {
   const { token } = useAuth();
+  const { setPage, setPageData } = usePage();
   const {
     mutate: deleteFaculty,
     loading,
@@ -67,6 +69,11 @@ function FacultyListItem({ faculty }) {
   // WIP
   const handleEdit = () => {
     console.log("Edit faculty:", faculty.name);
+  };
+
+  const handleFacultyClick = () => {
+    setPageData(faculty.id);
+    setPage("facultydetails");
   };
 
   return (
@@ -128,7 +135,9 @@ function FacultyListItem({ faculty }) {
         )}
       </div>
       <div className="faculty-info">
-        <h3 className="faculty-name">{faculty.name}</h3>
+        <h3 className="faculty-name" onClick={handleFacultyClick}>
+          {faculty.name}
+        </h3>
         <p className="faculty-department">{faculty.sub_department}</p>
         <p className="faculty-title">{faculty.title}</p>
         <p className="faculty-bio">{faculty.bio}</p>

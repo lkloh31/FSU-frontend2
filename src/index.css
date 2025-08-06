@@ -401,7 +401,6 @@ h1 {
   color: #9f4c00;
 }
 
-
 /* Add Departments */
 .add-department-section {
   display: flex;
@@ -411,7 +410,7 @@ h1 {
 }
 
 .add-department-btn {
-  background-color: #8CAC6D; /* Earthy green */
+  background-color: #8cac6d; /* Earthy green */
   color: white;
   font-weight: bold;
   border: none;
@@ -425,7 +424,6 @@ h1 {
 .add-department-btn:hover {
   background-color: #729454;
 }
-
 
 /* Edit/Delete Info */
 .edit-btn {
@@ -443,7 +441,6 @@ h1 {
 .edit-btn:hover {
   background-color: #e7d9b1;
 }
-
 
 .delete-btn {
   background-color: #cc6a5b;
@@ -474,7 +471,6 @@ h1 {
   flex-direction: column;
   gap: 0.5rem;
 }
-
 
 .delete-btn:hover {
   background-color: #7c372d;
@@ -522,7 +518,7 @@ h1 {
 }
 
 .department-form button {
-  background-color: #8CAC6D;
+  background-color: #8cac6d;
   color: white;
   font-weight: bold;
   padding: 0.6rem 1.2rem;
@@ -542,11 +538,6 @@ h1 {
   font-size: 0.95rem;
   margin-top: -0.25rem;
 }
-
-
-
-
-
 
 /* Screen Sizing */
 @media screen and (max-width: 1024px) {
@@ -755,6 +746,11 @@ h1 {
   font-size: 1.3rem;
   font-weight: bold;
   margin: 0 0 0.25rem 0;
+}
+
+.faculty-name:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .faculty-title {
