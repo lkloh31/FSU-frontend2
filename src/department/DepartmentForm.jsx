@@ -10,7 +10,8 @@ export default function DepartmentForm() {
   const addDepartment = (formData) => {
     const name = formData.get("name");
     const description = formData.get("description");
-    add({ name, description });
+    const banner_img = "https://placeholdit.com/400x400/dddddd/999999";
+    add({ name, banner_img, description });
   };
 
   return (
