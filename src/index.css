@@ -63,6 +63,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -410,7 +411,7 @@ h1 {
 }
 
 .add-department-btn {
-  background-color: #8cac6d; /* Earthy green */
+  background-color: #8CAC6D;
   color: white;
   font-weight: bold;
   border: none;
@@ -593,6 +594,172 @@ h1 {
     width: 15vh;
   }
 }
+
+
+/* Department Details */
+.department-details {
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 900px;
+  background-color: #fcfcf2;
+  text-align: center;
+  color: #3a3a3a;
+}
+
+.department-details h2 {
+  font-size: 3.4rem;
+  font-weight: bold;
+  text-align: center;
+  color: #5c3a35;
+  margin-top: 2rem;
+}
+
+.department-details h3 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.department-banner {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.department-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+}
+
+/* Faculty Cards Layout */
+.faculty-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.faculty-card {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 8px;
+  color: white;
+  text-align: left;
+  justify-content: flex-start;
+}
+
+.faculty-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.faculty-info p {
+  margin: 0.25rem 0;
+}
+
+/* Fire Nation */
+.department-details.fire-nation {
+  background-color: #F5F5E7;
+  color: #5d3c3c;
+}
+
+.fire-nation .faculty-card {
+  background-color: #A15145;
+}
+
+
+/* Air Nomads */
+.department-details.air-nomads {
+  background-color: #F5F5E7;
+  color: #805200;
+}
+
+.air-nomads .faculty-card {
+  background-color: #FCCA59;
+  color: #9F4C00;
+}
+
+/* Water Tribe */
+.department-details.water-tribe {
+  background-color: #F5F5E7;
+  color: #2c3e50;
+}
+
+.water-tribe .faculty-card {
+  background-color: #4a5a75;
+}
+
+/* Earth Kingdom */
+.department-details.earth-kingdom {
+  background-color: #F5F5E7;
+  color: #2d572c;
+}
+
+.earth-kingdom .faculty-card {
+  background-color: #C1DBB1;
+  color: #223F00;
+}
+
+/* navbar */
+.fire-nation .navbar {
+  background-color: #a15145;
+}
+
+.water-tribe .navbar {
+  background-color: #4a5a75;
+}
+
+.earth-kingdom .navbar {
+  background-color: #365710;
+}
+
+.air-nomads .navbar {
+  background-color: #fcca59; 
+}
+
+.air-nomads .navbar .logo {
+  color: #9f4c00; 
+}
+
+.air-nomads .navbar .nav-links a {
+  color: #9f4c00;
+}
+
+.air-nomads .navbar .nav-links a:hover {
+  color: #663300;
+}
+
+.fire-nation .nav-links a,
+.water-tribe .nav-links a,
+.earth-kingdom .nav-links a,
+.air-nomads .nav-links a {
+  color: #fcfcf2;
+}
+
+.fire-nation .nav-links a:hover,
+.water-tribe .nav-links a:hover,
+.earth-kingdom .nav-links a:hover,
+.air-nomads .nav-links a:hover {
+  color: #dcd0bd;
+}
+
+.department-banner {
+  width: 220px; 
+  height: auto; 
+  margin: 1rem auto; 
+  margin-bottom: -10px;
+  margin-top: -50px;
+  display: block;
+}
+
 
 /* Login/Register Page */
 .auth-page {
@@ -816,6 +983,44 @@ h1 {
   color: #554747;
 }
 
+
+/* audio */
+.sound-controls {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  background-color: #F5F5E7;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.sound-controls button {
+  background: none;
+  color: #554747;
+  border: 1px solid #554747;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.sound-controls button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.sound-controls input[type="range"] {
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+
+
 /* Container for the add faculty button */
 .add-faculty-container {
   display: flex;
@@ -978,3 +1183,4 @@ h1 {
   margin-top: 10px;
   text-align: center;
 }
+
