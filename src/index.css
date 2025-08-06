@@ -538,43 +538,6 @@ body {
 
 
 
-.department-details {
-  padding: 2rem;
-}
-
-.department-banner {
-  width: 150px;
-  height: auto;
-  margin: 1rem 0;
-}
-
-.department-description {
-  margin-bottom: 2rem;
-  font-size: 1.1rem;
-}
-
-.faculty-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-.faculty-card {
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  padding: 1rem;
-  width: 300px;
-  background: white;
-}
-
-.faculty-img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-.faculty-info p {
-  margin: 0.3rem 0;
-}
 
 
 

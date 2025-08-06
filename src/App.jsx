@@ -10,8 +10,6 @@ import HomePage from "./home/HomePage";
 import Error404 from "./Error404.jsx";
 import DepartmentDetails from "./department/DepartmentDetails";
 
-
-
 export default function App() {
   const { page } = usePage();
 
@@ -26,7 +24,5 @@ export default function App() {
   if (page === "airnomads") return <DepartmentDetails id={3} />;
   if (page === "earthkingdom") return <DepartmentDetails id={4} />;
 
-
   return <Error404 />;
 }
-
