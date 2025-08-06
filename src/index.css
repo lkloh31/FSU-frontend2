@@ -219,7 +219,7 @@ body {
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #6f685b;
+    background-color: #433d39;
     padding: 1rem 0;
     border-top: 1vh solid #dcd0bd;
   }
@@ -401,6 +401,208 @@ h1 {
 .air-nomads-btn {
   background-color: #FFE4AC;
   color: #9F4C00;
+}
+
+
+/* Add Departments */
+.add-department-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.add-department-btn {
+  background-color: #8CAC6D; /* Earthy green */
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
+}
+
+.add-department-btn:hover {
+  background-color: #729454;
+}
+
+
+/* Edit/Delete Info */
+.edit-btn {
+  background-color: #f5e5c0;
+  color: #554747;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+  background-color: #e7d9b1;
+}
+
+
+.delete-btn {
+  background-color: #cc6a5b;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.view-button-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+}
+
+.admin-button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+
+.delete-btn:hover {
+  background-color: #7c372d;
+}
+
+/* Add New Department */
+.form-heading {
+  text-align: center;
+  color: #554747;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.department-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.department-form-fields {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.department-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: #554747;
+}
+
+.department-form input {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: #fcfcf2;
+  color: #333;
+  min-width: 250px;
+}
+
+.department-form button {
+  background-color: #8CAC6D;
+  color: white;
+  font-weight: bold;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.department-form button:hover {
+  background-color: #729454;
+}
+
+.form-error {
+  color: #a15145;
+  font-size: 0.95rem;
+  margin-top: -0.25rem;
+}
+
+
+
+
+
+
+/* Screen Sizing */
+@media screen and (max-width: 1024px) {
+  .departments-list {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
+  }
+
+  .department-card {
+    padding: 1.5rem;
+  }
+
+  .department-title {
+    font-size: 1.8rem;
+  }
+
+  .view-btn {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .department-icon {
+    width: 80px;
+    margin-left: -10px;
+  }
+
+  .element-icons img {
+    width: 18vh;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+  .department-title {
+    font-size: 1.5rem;
+  }
+
+  .department-description {
+    font-size: 0.95rem;
+  }
+
+  .view-btn {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.9rem;
+  }
+
+  .department-icon {
+    width: 60px;
+    margin-left: -5px;
+  }
+
+  .element-icons img {
+    width: 15vh;
+  }
 }
 
 /* Login/Register Page */

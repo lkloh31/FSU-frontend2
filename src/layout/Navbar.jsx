@@ -18,7 +18,7 @@ export default function Navbar() {
         onClick={() => setMenuOpen((prev) => !prev)}
         aria-label="Toggle Menu"
       >
-        <img src="/images/hamburger-icon.png" alt="menu icon" />
+        <img src="/images/hamburgericon1.png" alt="menu icon" />
       </button>
 
   
